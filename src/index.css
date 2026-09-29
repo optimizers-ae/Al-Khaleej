@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-medical-blue: #0F5A82;
+  --color-medical-teal: #1A7596;
+  --color-medical-green: #2B9372;
+  --color-off-white: #F8F9FA;
+  --color-charcoal: #1F2937;
+  
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Oswald", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-charcoal bg-white antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-charcoal;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
