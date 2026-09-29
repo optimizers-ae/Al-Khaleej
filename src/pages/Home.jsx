@@ -2,6 +2,20 @@ import { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 
+import imgOvaPure from '../assets/products/ova_pure.png';
+import imgPregnaPure from '../assets/products/pregna_pure.png';
+import imgPureBiotin from '../assets/products/pure_biotin.png';
+import imgPureD3Drop from '../assets/products/pure_d3_drop.png';
+import imgPureFert from '../assets/products/pure_fert.png';
+import imgPureIron from '../assets/products/pure_iron.png';
+import imgPureOmegaD3 from '../assets/products/pure_omega_d3.png';
+import imgVoxrolD3 from '../assets/products/voxrol-d3.png';
+import imgVoxC from '../assets/products/voxrol-c.png';
+import imgOcalD3 from '../assets/products/ocal-d3.png';
+import imgVoxB from '../assets/products/vox-b.png';
+import imgUroCran from '../assets/products/uro_cran.png';
+import imgLactoVox from '../assets/products/lacto_vox.png';
+
 const FadeIn = ({ children, delay = 0, direction = 'up', className = '' }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -34,19 +48,19 @@ const Eyebrow = ({ text }) => (
 export default function Home() {
   const [carouselIndex, setCarouselIndex] = useState(0);
   const products = [
-    { name: "Ova Pure", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/ova_pure.png" },
-    { name: "Pregna Pure", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pregna_pure.png" },
-    { name: "Pure Biotin", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pure_biotin.png" },
-    { name: "Pure D3 Drop", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pure_d3_drop.png" },
-    { name: "Pure Fert", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pure_fert.png" },
-    { name: "Pure Iron", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pure_iron.png" },
-    { name: "Pure Omega D3", img: "https://www.khaleejdrugstore.ae/images/distribution/pure_cure/pure_omega_d3.png" },
-    { name: "Voxrol D3", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/voxrol-d3.png" },
-    { name: "Vox C", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/voxrol-c.png" },
-    { name: "Ocal D3", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/ocal-d3.png" },
-    { name: "Vox B", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/vox-b.png" },
-    { name: "Uro Cran", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/uro_cran.png" },
-    { name: "Lacto Vox", img: "https://www.khaleejdrugstore.ae/images/distribution/vox_dei/lacto_vox.png" }
+    { name: "Ova Pure", img: imgOvaPure },
+    { name: "Pregna Pure", img: imgPregnaPure },
+    { name: "Pure Biotin", img: imgPureBiotin },
+    { name: "Pure D3 Drop", img: imgPureD3Drop },
+    { name: "Pure Fert", img: imgPureFert },
+    { name: "Pure Iron", img: imgPureIron },
+    { name: "Pure Omega D3", img: imgPureOmegaD3 },
+    { name: "Voxrol D3", img: imgVoxrolD3 },
+    { name: "Vox C", img: imgVoxC },
+    { name: "Ocal D3", img: imgOcalD3 },
+    { name: "Vox B", img: imgVoxB },
+    { name: "Uro Cran", img: imgUroCran },
+    { name: "Lacto Vox", img: imgLactoVox }
   ];
 
   const nextSlide = () => setCarouselIndex((prev) => (prev + 1) % Math.max(1, products.length - 4));
@@ -56,7 +70,7 @@ export default function Home() {
     <main className="w-full bg-white overflow-hidden pb-20">
       
       {/* HERO SECTION */}
-      <section className="max-w-[1480px] mx-auto px-4 lg:px-12 pt-8 pb-16 lg:pt-12 lg:pb-24">
+      <section className="max-w-[1880px] mx-auto px-4 lg:px-12 pt-8 pb-16 lg:pt-12 lg:pb-24">
         <div className="relative rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#F8FAFC] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 min-h-[600px] flex items-center">
           
           {/* Background Image & Gradient */}
@@ -248,50 +262,6 @@ export default function Home() {
                 Our Distribution Network <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* RETAIL PHARMACIES */}
-      <section id="retail-pharmacies" className="bg-medical-blue py-20 lg:py-32">
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <FadeIn>
-              <div className="flex items-center justify-center space-x-3 mb-6">
-                <div className="h-[2px] w-6 bg-medical-green rounded-full" />
-                <span className="text-xs font-bold tracking-[0.15em] uppercase text-white/80">RETAIL PHARMACIES IN AJMAN</span>
-                <div className="h-[2px] w-6 bg-medical-green rounded-full" />
-              </div>
-              <h2 className="text-4xl lg:text-6xl uppercase mb-6 text-white leading-[1.1]">SERVING OUR COMMUNITY</h2>
-              <p className="text-lg text-white/70 font-light mb-8">
-                Our retail pharmacies in Ajman provide genuine medicines, healthcare products and expert advice, making quality healthcare more accessible to families.
-              </p>
-              <a href="#contact" className="inline-flex items-center text-white font-semibold hover:text-medical-green transition-colors group">
-                Find a Pharmacy Near You <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </FadeIn>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
-            {[
-              { name: "Al Muwaihat Pharmacy", loc: "Al Muwaihat, Ajman, UAE" },
-              { name: "Ajman City Pharmacy", loc: "Ajman, UAE" },
-              { name: "Al Nuaimiya Pharmacy", loc: "Al Nuaimiya, Ajman, UAE" }
-            ].map((pharm, i) => (
-              <FadeIn key={i} delay={i * 0.15}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-xl hover:-translate-y-2 transition-transform duration-300">
-                  <div className="h-48 overflow-hidden relative">
-                    <img src="/generated/pharmacy_exterior.jpg" alt={pharm.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-8">
-                    <h4 className="text-2xl uppercase mb-3 text-medical-blue">{pharm.name}</h4>
-                    <p className="flex items-center text-charcoal/60 text-sm font-medium">
-                      <MapPin className="w-4 h-4 mr-2 text-medical-teal" /> {pharm.loc}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
           </div>
         </div>
       </section>
