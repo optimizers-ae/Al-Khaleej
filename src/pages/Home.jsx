@@ -46,7 +46,7 @@ const Eyebrow = ({ text }) => (
 );
 
 export default function Home() {
-  const [carouselIndex, setCarouselIndex] = useState(0);
+  const sliderRef = useRef(null);
   const products = [
     { name: "Ova Pure", img: imgOvaPure },
     { name: "Pregna Pure", img: imgPregnaPure },
@@ -63,8 +63,8 @@ export default function Home() {
     { name: "Lacto Vox", img: imgLactoVox }
   ];
 
-  const nextSlide = () => setCarouselIndex((prev) => (prev + 1) % Math.max(1, products.length - 4));
-  const prevSlide = () => setCarouselIndex((prev) => (prev === 0 ? Math.max(0, products.length - 5) : prev - 1));
+  const nextSlide = () => sliderRef.current?.scrollBy({ left: 320, behavior: 'smooth' });
+  const prevSlide = () => sliderRef.current?.scrollBy({ left: -320, behavior: 'smooth' });
 
   return (
     <main className="w-full bg-white overflow-hidden pb-20">
@@ -84,7 +84,7 @@ export default function Home() {
               />
             </div>
             {/* Gradient mask to blend the image seamlessly into the solid left side */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/95 to-transparent lg:w-[70%] z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC] from-40% md:from-50% via-[#F8FAFC]/95 to-transparent lg:w-[70%] z-10"></div>
           </div>
 
           <div className="relative z-20 p-8 lg:p-16 flex flex-col justify-center w-full lg:w-[65%]">
@@ -98,7 +98,7 @@ export default function Home() {
             </FadeIn>
             
             <FadeIn delay={0.2}>
-              <h1 className="text-6xl lg:text-[84px] leading-[0.95] mb-6 text-charcoal font-medium">
+              <h1 className="text-4xl md:text-5xl lg:text-[84px] leading-[1.1] lg:leading-[0.95] mb-6 text-charcoal font-medium">
                 Trusted Healthcare <br/> 
                 Distribution <br/>
                 <span className="text-medical-blue">Across the UAE</span>
@@ -183,7 +183,7 @@ export default function Home() {
             { title: "Pharmaceuticals", sub: "Trusted medicines for a healthier tomorrow", img: "/generated/cat_pharma.jpg" },
             { title: "Supplements", sub: "Nutrition for a better, healthier life", img: "/generated/cat_supplements.jpg" },
             { title: "Medical Instruments", sub: "Quality instruments for better care", img: "/generated/cat_instruments.jpg" },
-            { title: "Healthcare Essentials", sub: "Everyday products for safer living", img: "/generated/hero_pharmacy.jpg" },
+            { title: "Healthcare Essentials", sub: "Everyday products for safer living", img: "/generated/cat_essentials.jpg" },
           ].map((cat, i) => (
             <FadeIn key={i} delay={0.1 * i} className="group">
               <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
@@ -219,21 +219,21 @@ export default function Home() {
             </FadeIn>
           </div>
 
-          <div className="relative overflow-hidden">
-            <motion.div 
-              className="flex space-x-6"
-              animate={{ x: `-${carouselIndex * 280}px` }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          <div className="relative -mx-4 px-4 lg:mx-0 lg:px-0">
+            <div 
+              ref={sliderRef}
+              className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {products.map((prod, i) => (
-                <div key={i} className="min-w-[256px] w-[256px] bg-white rounded-xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center">
-                  <div className="h-40 w-full bg-gray-50 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
-                    <img src={prod.img} className="h-32 object-contain mix-blend-multiply" alt={prod.name} onError={(e) => e.target.src='/images/mainlogo.png'} />
+                <div key={i} className="min-w-[260px] lg:min-w-[300px] snap-start bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-shadow flex flex-col items-center">
+                  <div className="h-48 w-full bg-gray-50/50 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                    <img src={prod.img} className="h-36 object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500" alt={prod.name} onError={(e) => e.target.src='/images/mainlogo.png'} />
                   </div>
-                  <h4 className="font-medium text-center w-full text-charcoal truncate">{prod.name}</h4>
+                  <h4 className="text-lg font-semibold text-center w-full text-charcoal truncate">{prod.name}</h4>
+                  <p className="text-xs text-medical-teal font-medium mt-2 uppercase tracking-wider">Premium</p>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

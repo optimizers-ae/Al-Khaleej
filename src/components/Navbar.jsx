@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -41,15 +44,55 @@ const Navbar = () => {
 
         {/* Mobile Menu Button - simplified */}
         <div className="lg:hidden">
-          <button className="text-charcoal p-2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-charcoal p-2 focus:outline-none">
+            {isMobileMenuOpen ? (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            ) : (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="lg:hidden absolute top-20 left-0 w-full bg-white border-b border-gray-100 shadow-lg z-50"
+          >
+            <div className="px-6 py-4 flex flex-col space-y-4">
+              {["Home", "About", "Products", "Distribution", "Retail Pharmacies", "Contact"].map((item) => (
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-charcoal hover:text-medical-teal transition-colors py-2 border-b border-gray-50 last:border-0"
+                >
+                  {item}
+                </a>
+              ))}
+              <a 
+                href="#contact" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-4 px-6 py-3 bg-gradient-to-r from-medical-blue to-medical-teal text-white rounded-full text-center font-medium shadow-md"
+              >
+                Enquire Now
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
