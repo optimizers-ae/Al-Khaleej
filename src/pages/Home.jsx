@@ -106,7 +106,7 @@ export default function Home() {
             </FadeIn>
             
             <FadeIn delay={0.3}>
-              <p className="text-lg text-charcoal/80 max-w-lg mb-10 leading-relaxed font-light">
+              <p className="text-sm sm:text-lg text-charcoal/80 max-w-lg mb-10 leading-relaxed font-light">
                 A leading distributor, retailer and complete healthcare provider, delivering trusted medicines, supplements and medical instruments across the UAE.
               </p>
             </FadeIn>
@@ -290,7 +290,7 @@ export default function Home() {
               <h2 className="text-3xl lg:text-5xl uppercase mb-6 leading-[1.1] group-hover:text-medical-teal transition-colors">
                 A HEALTHIER UAE,<br/>TOGETHER.
               </h2>
-              <p className="text-charcoal/70 font-light leading-relaxed mb-10 flex-grow">
+              <p className=" text-charcoal/70 font-light leading-relaxed mb-10 flex-grow">
                 To be a leading and trusted healthcare partner in the UAE, known for our commitment to quality, accessibility and exceptional service across distribution and retail.
               </p>
               <div className="h-64 rounded-2xl overflow-hidden mt-auto">
