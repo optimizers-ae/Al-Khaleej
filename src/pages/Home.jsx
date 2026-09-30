@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[75vh] lg:min-h-screen flex items-center pt-20">
+      <section className="relative w-full min-h-[85vh] lg:min-h-screen flex items-center pt-20">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 h-full">
           <div className="sticky top-0 w-full h-[85vh] lg:h-[110vh] overflow-hidden">
@@ -132,61 +132,60 @@ export default function Home() {
         </div>
 
         {/* Curved Bottom Divider */}
-    
       </section>
 
       {/* CATEGORIES SECTION */}
       <section className="relative z-10 bg-white w-full py-16 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
-        <FadeIn className="mb-10">
-          <Eyebrow text="Product Categories" />
-          <h2 className="text-4xl lg:text-5xl capitalize">What We Offer</h2>
-        </FadeIn>
+          <FadeIn className="mb-10">
+            <Eyebrow text="Product Categories" />
+            <h2 className="text-4xl lg:text-5xl capitalize">What We Offer</h2>
+          </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            {
-              title: "Pharmaceuticals",
-              sub: "Trusted medicines for a healthier tomorrow",
-              img: catPharmaImg,
-            },
-            {
-              title: "Supplements",
-              sub: "Nutrition for a better, healthier life",
-              img: catSupplementsImg,
-            },
-            {
-              title: "Medical Instruments",
-              sub: "Quality instruments for better care",
-              img: catInstrumentsImg,
-            },
-            {
-              title: "Healthcare Essentials",
-              sub: "Everyday products for safer living",
-              img: catEssentialsImg,
-            },
-          ].map((cat, i) => (
-            <FadeIn key={i} delay={0.1 * i} className="group">
-              <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                <div className="h-64 w-full overflow-hidden">
-                  <img
-                    src={cat.img}
-                    alt={cat.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                title: "Pharmaceuticals",
+                sub: "Trusted medicines for a healthier tomorrow",
+                img: catPharmaImg,
+              },
+              {
+                title: "Supplements",
+                sub: "Nutrition for a better, healthier life",
+                img: catSupplementsImg,
+              },
+              {
+                title: "Medical Instruments",
+                sub: "Quality instruments for better care",
+                img: catInstrumentsImg,
+              },
+              {
+                title: "Healthcare Essentials",
+                sub: "Everyday products for safer living",
+                img: catEssentialsImg,
+              },
+            ].map((cat, i) => (
+              <FadeIn key={i} delay={0.1 * i} className="group">
+                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                  <div className="h-64 w-full overflow-hidden">
+                    <img
+                      src={cat.img}
+                      alt={cat.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl capitalize mb-2 group-hover:text-medical-teal transition-colors">
+                      {cat.title}
+                    </h3>
+                    <p className="text-sm text-charcoal/60 font-light">
+                      {cat.sub}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl capitalize mb-2 group-hover:text-medical-teal transition-colors">
-                    {cat.title}
-                  </h3>
-                  <p className="text-sm text-charcoal/60 font-light">
-                    {cat.sub}
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -196,7 +195,9 @@ export default function Home() {
           <div className="flex justify-between items-end mb-10">
             <FadeIn>
               <Eyebrow text="Featured Products" />
-              <h2 className="text-4xl lg:text-5xl capitalize">Premium Supply</h2>
+              <h2 className="text-4xl lg:text-5xl capitalize">
+                Premium Supply
+              </h2>
             </FadeIn>
 
             <FadeIn className="flex space-x-3 hidden md:flex">
