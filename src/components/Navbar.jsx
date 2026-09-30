@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100"
+      className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
+        isScrolled
+          ? "bg-white/90 backdrop-blur-md border-b border-gray-100"
+          : "bg-transparent border-transparent"
+      }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
@@ -35,7 +48,11 @@ const Navbar = () => {
             <a
               key={item}
               href={`#${item.toLowerCase().replace(" ", "-")}`}
-              className="text-sm font-medium text-charcoal hover:text-medical-teal transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-charcoal hover:text-medical-teal"
+                  : "text-white/90 hover:text-white"
+              }`}
             >
               {item}
             </a>
@@ -56,7 +73,9 @@ const Navbar = () => {
         <div className="lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-charcoal p-2 focus:outline-none"
+            className={`p-2 focus:outline-none ${
+              isScrolled || isMobileMenuOpen ? "text-charcoal" : "text-white"
+            }`}
           >
             {isMobileMenuOpen ? (
               <svg

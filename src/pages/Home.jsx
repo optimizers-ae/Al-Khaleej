@@ -74,78 +74,61 @@ export default function Home() {
     sliderRef.current?.scrollBy({ left: -320, behavior: "smooth" });
 
   return (
-    <main className="w-full bg-white overflow-hidden pb-20">
+    <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
-      <section className="max-w-[1880px] mx-auto px-4 lg:px-12 pt-8 pb-16 lg:pt-12 lg:pb-24">
-        <div className="relative rounded-[24px] lg:rounded-[32px] overflow-hidden bg-[#F8FAFC] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 min-h-[600px] flex items-center">
-          {/* Background Image & Gradient */}
-          <div className="absolute inset-0 z-0">
-            {/* The image is pushed to the right on desktop, covering full width on mobile but with gradient over it */}
-            <div className="absolute inset-y-0 right-0 w-full lg:w-[65%] h-full">
-              <img
-                src="/generated/hero_pharmacy.jpg"
-                alt="Premium Pharmacy Showcase"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            {/* Gradient mask to blend the image seamlessly into the solid left side */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC] from-40% md:from-50% via-[#F8FAFC]/95 to-transparent lg:w-[70%] z-10"></div>
-          </div>
-
-          <div className="relative z-20 p-8 lg:p-16 flex flex-col justify-center w-full lg:w-[65%]">
-            <FadeIn delay={0.1}>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="h-[2px] w-6 bg-medical-teal rounded-full" />
-                <span className="text-sm font-bold tracking-[0.2em] text-medical-teal/80">
-                  SINCE 1997
-                </span>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <h1 className="text-4xl md:text-5xl lg:text-[84px] leading-[1.1] lg:leading-[0.95] mb-6 text-charcoal font-medium">
-                Trusted Healthcare <br />
-                Distribution <br />
-                <span className="text-medical-blue">Across the UAE</span>
-              </h1>
-            </FadeIn>
-
-            <FadeIn delay={0.3}>
-              <p className="text-sm sm:text-lg text-charcoal/80 max-w-lg mb-10 leading-relaxed font-light">
-                A leading distributor, retailer and complete healthcare
-                provider, delivering trusted medicines, supplements and medical
-                instruments across the UAE.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.4}>
-              <Link
-                to="/products"
-                className="inline-flex items-center bg-gradient-to-r from-medical-blue to-medical-teal text-white px-8 py-4 rounded-full font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all w-max"
-              >
-                Explore Products <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={0.5} className="mt-12 lg:mt-16">
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold tracking-widest text-medical-blue/70">
-                <span>PHARMACEUTICALS</span>
-                <span className="text-gray-300">|</span>
-                <span>SUPPLEMENTS</span>
-                <span className="text-gray-300">|</span>
-                <span>MEDICAL INSTRUMENTS</span>
-                <span className="text-gray-300">|</span>
-                <span>HEALTHCARE ESSENTIALS</span>
-              </div>
-            </FadeIn>
+      <section className="relative w-full min-h-screen flex items-center pt-20">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 h-full">
+          <div className="sticky top-0 w-full h-[110vh] overflow-hidden">
+            <img
+              src="/generated/hero_pharmacy.jpg"
+              alt="Premium Pharmacy Showcase"
+              className="w-full h-full object-cover object-center sticky"
+            />
+            {/* Dark Overlay for readability */}
+            {/* <div className="absolute inset-0 bg-[#001f3f]/30 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#001f3f]/40 to-transparent"></div> */}
           </div>
         </div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-12 w-full pt-20 pb-40">
+          <FadeIn delay={0.1}>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="h-[2px] w-6 bg-medical-teal rounded-full" />
+              <span className="text-xs lg:text-sm font-bold tracking-[0.2em] text-white/90 uppercase">
+                SINCE 1997
+              </span>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <h1 className="text-white text-4xl lg:text-[70px] mb-6 leading-[1.1] max-w-4xl">
+              Trusted Healthcare <br /> Distribution <br /> Across the UAE
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="text-white/80 text-sm lg:text-lg max-w-lg mb-10 leading-relaxed ">
+              A leading distributor, retailer and complete healthcare provider,
+              delivering trusted medicines, supplements and medical instruments
+              across the UAE.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <Link
+              to="/contact"
+              className="bg-white text-medical-blue px-8 py-4 rounded-full font-bold hover:bg-off-white transition-colors"
+            >
+              Enquire Now <ArrowRight className="inline ml-2 w-4 h-4" />
+            </Link>
+          </FadeIn>
+        </div>
+
+        {/* Curved Bottom Divider */}
+    
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section
-        className="max-w-[1440px] mx-auto px-4 lg:px-12 py-16 lg:py-24"
-      >
+      <section className="max-w-[1440px] mx-auto px-4 lg:px-12 py-16 lg:py-24">
         <FadeIn>
           <Eyebrow text="PRODUCT CATEGORIES" />
         </FadeIn>
@@ -258,8 +241,8 @@ export default function Home() {
         className="max-w-[1440px] mx-auto px-4 lg:px-12 pb-12"
       >
         <FadeIn>
-          <div className="bg-medical-blue rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative">
-            <div className="p-10 lg:p-16 flex-1 flex flex-col justify-center relative z-10">
+          <div className="rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative bg-medical-blue">
+            <div className="p-10 lg:p-16 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-b lg:bg-gradient-to-r from-medical-blue to-[#0cb5a9]">
               <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-4">
                 Get in Touch
               </p>
@@ -272,7 +255,10 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <Link to="/contact" className="bg-white text-medical-blue px-8 py-4 rounded-full font-bold hover:bg-off-white transition-colors">
+                <Link
+                  to="/contact"
+                  className="bg-white text-medical-blue px-8 py-4 rounded-full font-bold hover:bg-off-white transition-colors"
+                >
                   Enquire Now <ArrowRight className="inline ml-2 w-4 h-4" />
                 </Link>
                 <div className="flex items-center text-white/90">
@@ -294,7 +280,7 @@ export default function Home() {
                 className="w-full h-full object-cover"
                 alt="Al Khaleej Store Office"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-medical-blue via-medical-blue/80 to-transparent lg:w-32 left-0" />
+              <div className="absolute top-0 left-0 w-full h-32 lg:w-40 lg:h-full bg-gradient-to-b lg:bg-gradient-to-r from-[#0cb5a9]  to-transparent" />
             </div>
           </div>
         </FadeIn>
