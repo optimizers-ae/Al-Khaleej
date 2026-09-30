@@ -84,10 +84,10 @@ export default function Home() {
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen flex items-center pt-20">
+      <section className="relative w-full min-h-[75vh] lg:min-h-screen flex items-center pt-20">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 h-full">
-          <div className="sticky top-0 w-full h-[110vh] overflow-hidden">
+          <div className="sticky top-0 w-full h-[85vh] lg:h-[110vh] overflow-hidden">
             <img
               src={heroPharmacyImg}
               alt="Premium Pharmacy Showcase"
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-12 w-full pt-20 pb-40">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-12 w-full pt-10 pb-20 lg:pt-20 lg:pb-40">
           <FadeIn delay={0.1}>
             <div className="flex items-center space-x-3 mb-6">
               <div className="h-[2px] w-6 bg-medical-teal rounded-full" />

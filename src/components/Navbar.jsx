@@ -22,7 +22,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
         isScrolled
           ? "bg-white/90 backdrop-blur-md border-b border-gray-100"
-          : "bg-transparent border-transparent"
+          : "bg-white border-b border-gray-100 lg:bg-transparent lg:border-transparent"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
@@ -30,7 +30,7 @@ const Navbar = () => {
         <div 
           className={`flex-shrink-0 cursor-pointer flex items-center transition-all duration-300 ${
             !isScrolled 
-              ? "bg-white/80 backdrop-blur-md p-2 rounded-xl shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:shadow-none" 
+              ? "lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:shadow-none" 
               : ""
           }`}
         >
@@ -79,9 +79,7 @@ const Navbar = () => {
         <div className="lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 focus:outline-none ${
-              isScrolled || isMobileMenuOpen ? "text-charcoal" : "text-white"
-            }`}
+            className="p-2 focus:outline-none text-charcoal lg:text-white"
           >
             {isMobileMenuOpen ? (
               <svg
