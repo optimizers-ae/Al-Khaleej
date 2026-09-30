@@ -27,7 +27,13 @@ const Navbar = () => {
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex-shrink-0 cursor-pointer flex items-center">
+        <div 
+          className={`flex-shrink-0 cursor-pointer flex items-center transition-all duration-300 ${
+            !isScrolled 
+              ? "bg-white/80 backdrop-blur-md p-2 rounded-xl shadow-sm lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:shadow-none" 
+              : ""
+          }`}
+        >
           <img
             src={logo}
             alt="Al Khaleej Store for Drugs and Medical Instruments"

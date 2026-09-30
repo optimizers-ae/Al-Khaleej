@@ -17,6 +17,14 @@ import imgVoxB from "../assets/products/vox-b.png";
 import imgUroCran from "../assets/products/uro_cran.png";
 import imgLactoVox from "../assets/products/lacto_vox.png";
 
+import heroPharmacyImg from "../assets/images/hero_pharmacy.jpg";
+import catPharmaImg from "../assets/images/cat_pharma.jpg";
+import catSupplementsImg from "../assets/images/cat_supplements.jpg";
+import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
+import catEssentialsImg from "../assets/images/cat_essentials.jpg";
+import pharmacyExteriorImg from "../assets/images/pharmacy_exterior.jpg";
+import logo from "../assets/logo.png";
+
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -44,7 +52,7 @@ const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
 const Eyebrow = ({ text }) => (
   <div className="flex items-center space-x-3 mb-6">
     <div className="h-[2px] w-6 bg-medical-teal rounded-full" />
-    <span className="text-xs font-bold tracking-[0.15em] uppercase text-charcoal/70">
+    <span className="text-xs font-bold tracking-[0.15em] capitalize text-charcoal/70">
       {text}
     </span>
   </div>
@@ -81,7 +89,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0 h-full">
           <div className="sticky top-0 w-full h-[110vh] overflow-hidden">
             <img
-              src="/generated/hero_pharmacy.jpg"
+              src={heroPharmacyImg}
               alt="Premium Pharmacy Showcase"
               className="w-full h-full object-cover object-center sticky"
             />
@@ -96,8 +104,8 @@ export default function Home() {
           <FadeIn delay={0.1}>
             <div className="flex items-center space-x-3 mb-6">
               <div className="h-[2px] w-6 bg-medical-teal rounded-full" />
-              <span className="text-xs lg:text-sm font-bold tracking-[0.2em] text-white/90 uppercase">
-                SINCE 1997
+              <span className="text-xs lg:text-sm font-bold tracking-[0.2em] text-white/90 capitalize">
+                Since 1997
               </span>
             </div>
           </FadeIn>
@@ -128,9 +136,11 @@ export default function Home() {
       </section>
 
       {/* CATEGORIES SECTION */}
-      <section className="max-w-[1440px] mx-auto px-4 lg:px-12 py-16 lg:py-24">
-        <FadeIn>
-          <Eyebrow text="PRODUCT CATEGORIES" />
+      <section className="relative z-10 bg-white w-full py-16 lg:py-24">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
+        <FadeIn className="mb-10">
+          <Eyebrow text="Product Categories" />
+          <h2 className="text-4xl lg:text-5xl capitalize">What We Offer</h2>
         </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -138,22 +148,22 @@ export default function Home() {
             {
               title: "Pharmaceuticals",
               sub: "Trusted medicines for a healthier tomorrow",
-              img: "/generated/cat_pharma.jpg",
+              img: catPharmaImg,
             },
             {
               title: "Supplements",
               sub: "Nutrition for a better, healthier life",
-              img: "/generated/cat_supplements.jpg",
+              img: catSupplementsImg,
             },
             {
               title: "Medical Instruments",
               sub: "Quality instruments for better care",
-              img: "/generated/cat_instruments.jpg",
+              img: catInstrumentsImg,
             },
             {
               title: "Healthcare Essentials",
               sub: "Everyday products for safer living",
-              img: "/generated/cat_essentials.jpg",
+              img: catEssentialsImg,
             },
           ].map((cat, i) => (
             <FadeIn key={i} delay={0.1 * i} className="group">
@@ -166,7 +176,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl uppercase mb-2 group-hover:text-medical-teal transition-colors">
+                  <h3 className="text-2xl capitalize mb-2 group-hover:text-medical-teal transition-colors">
                     {cat.title}
                   </h3>
                   <p className="text-sm text-charcoal/60 font-light">
@@ -177,6 +187,7 @@ export default function Home() {
             </FadeIn>
           ))}
         </div>
+        </div>
       </section>
 
       {/* FEATURED PRODUCTS CAROUSEL */}
@@ -184,8 +195,8 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
           <div className="flex justify-between items-end mb-10">
             <FadeIn>
-              <Eyebrow text="FEATURED PRODUCTS" />
-              <h2 className="text-4xl lg:text-5xl uppercase">Premium Supply</h2>
+              <Eyebrow text="Featured Products" />
+              <h2 className="text-4xl lg:text-5xl capitalize">Premium Supply</h2>
             </FadeIn>
 
             <FadeIn className="flex space-x-3 hidden md:flex">
@@ -219,13 +230,13 @@ export default function Home() {
                       src={prod.img}
                       className="h-36 object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500"
                       alt={prod.name}
-                      onError={(e) => (e.target.src = "/images/mainlogo.png")}
+                      onError={(e) => (e.target.src = logo)}
                     />
                   </div>
                   <h4 className="text-lg font-semibold text-center w-full text-charcoal truncate">
                     {prod.name}
                   </h4>
-                  <p className="text-xs text-medical-teal font-medium mt-2 uppercase tracking-wider">
+                  <p className="text-xs text-medical-teal font-medium mt-2 capitalize tracking-wider">
                     Premium
                   </p>
                 </div>
@@ -243,11 +254,11 @@ export default function Home() {
         <FadeIn>
           <div className="rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative bg-medical-blue">
             <div className="p-10 lg:p-16 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-b lg:bg-gradient-to-r from-medical-blue to-[#0cb5a9]">
-              <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-4">
+              <p className="text-white/70 text-sm font-bold capitalize tracking-widest mb-4">
                 Get in Touch
               </p>
-              <h2 className="text-4xl lg:text-5xl text-white uppercase mb-6 leading-[1.1]">
-                LET’S WORK TOGETHER <br /> FOR A HEALTHIER TOMORROW
+              <h2 className="text-4xl lg:text-5xl text-white capitalize mb-6 leading-[1.1]">
+                Let’s Work Together <br /> For A Healthier Tomorrow
               </h2>
               <p className="text-white/80 font-light text-lg mb-10 max-w-xl">
                 For product enquiries, partnership opportunities or pharmacy
@@ -276,7 +287,7 @@ export default function Home() {
             </div>
             <div className="lg:w-[45%] min-h-[300px] relative">
               <img
-                src="/generated/pharmacy_exterior.jpg"
+                src={pharmacyExteriorImg}
                 className="w-full h-full object-cover"
                 alt="Al Khaleej Store Office"
               />

@@ -56,7 +56,7 @@ const Footer = () => {
             className="flex items-center justify-center md:justify-start gap-4 mb-4"
           >
             <div className="h-[1px] w-12 bg-white/60"></div>
-            <p className="text-sm font-semibold tracking-[0.2em] text-white/90 uppercase">
+            <p className="text-sm font-semibold tracking-[0.2em] text-white/90 capitalize">
               Established in 1997
             </p>
           </motion.div>
@@ -85,8 +85,8 @@ const Footer = () => {
           className="bg-gradient-to-r from-[#2b6ba1] via-[#4096a6] to-[#55b18b] rounded-2xl md:rounded-[2rem] p-8 md:p-14 shadow-2xl backdrop-blur-md mb-20 relative overflow-hidden border border-white/10"
         >
           <div className="relative z-10 text-center max-w-2xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-light mb-4 text-white">
-              SIGN UP <span className="font-bold">FOR NEWSLETTER</span>
+            <h3 className="text-3xl md:text-4xl font-light mb-4 text-white capitalize">
+              Sign Up <span className="font-bold">For Newsletter</span>
             </h3>
             <p className="text-sm md:text-base text-white/90 mb-8 font-light leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida.
