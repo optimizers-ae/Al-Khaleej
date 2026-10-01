@@ -30,7 +30,7 @@ const TwitterIcon = ({ className }) => (
 
 const Footer = () => {
   return (
-    <footer className="relative w-full text-white font-sans bg-[#1c2833] overflow-hidden mt-20">
+    <footer className="relative w-full text-white font-sans bg-[#1c2833] overflow-hidden mt-20 ">
       {/* Top Gradient Area */}
       <div 
         className="relative bg-gradient-to-br from-[#0231aa] via-[#0295ce] to-[#12d287] pt-24 pb-64 px-6 lg:px-24"
@@ -177,7 +177,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-white/80 font-light flex flex-col items-center md:items-start">
               <li className="flex items-center justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-[#32f2f1] mr-3 shrink-0" />
-                <span>Al Muwaihat, Ajman, UAE</span>
+                <span>Serving all 7 Emirates across the UAE</span>
               </li>
               <li className="flex items-center justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-[#32f2f1] mr-3 shrink-0" />
@@ -217,7 +217,7 @@ const Footer = () => {
         </div>
         
         {/* Bottom copyright row */}
-        <div className="border-t border-white/10 pt-8 mt-4 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 text-center md:text-left gap-4 md:gap-0">
+        <div className="border-t border-white/10 pt-8 my-4 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 text-center md:text-left gap-4 md:gap-0">
           <p>© {new Date().getFullYear()} Al Khaleej Store for Drugs and Medical Instruments.</p>
           <div className="flex gap-6">
              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

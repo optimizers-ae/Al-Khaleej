@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
@@ -22,7 +22,7 @@ import catPharmaImg from "../assets/images/cat_pharma.jpg";
 import catSupplementsImg from "../assets/images/cat_supplements.jpg";
 import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
 import catEssentialsImg from "../assets/images/cat_essentials.jpg";
-import pharmacyExteriorImg from "../assets/images/pharmacy_exterior.jpg";
+import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
 import logo from "../assets/logo.png";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* FEATURED PRODUCTS CAROUSEL */}
-      <section className="bg-off-white py-16 lg:py-24">
+      {/* <section className="bg-off-white py-16 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
           <div className="flex justify-between items-end mb-10">
             <FadeIn>
@@ -245,7 +245,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* FOOTER CTA BANNER */}
       <section
@@ -254,43 +254,41 @@ export default function Home() {
       >
         <FadeIn>
           <div className="rounded-[32px] overflow-hidden flex flex-col lg:flex-row shadow-2xl relative bg-medical-blue">
-            <div className="p-10 lg:p-16 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-b lg:bg-gradient-to-r from-medical-blue to-[#0cb5a9]">
-              <p className="text-white/70 text-sm font-bold capitalize tracking-widest mb-4">
+            <div className="p-8 lg:p-10 flex-1 flex flex-col justify-center relative z-10 bg-gradient-to-b lg:bg-gradient-to-r from-medical-blue to-[#0cb5a9]">
+              <p className="text-white/70 text-sm font-bold capitalize tracking-widest mb-2">
                 Get in Touch
               </p>
-              <h2 className="text-4xl lg:text-5xl text-white capitalize mb-6 leading-[1.1]">
+              <h2 className="text-4xl lg:text-5xl text-white capitalize mb-2 leading-[1.1]">
                 Let’s Work Together <br /> For A Healthier Tomorrow
               </h2>
-              <p className="text-white/80 font-light text-lg mb-10 max-w-xl">
+              <p className="text-white/80 font-light text-lg mb-6 max-w-xl">
                 For product enquiries, partnership opportunities or pharmacy
                 support, our team is here to assist you.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
                   to="/contact"
-                  className="bg-white text-medical-blue px-8 py-4 rounded-full font-bold hover:bg-off-white transition-colors"
+                  className="bg-white text-medical-blue px-8 py-3 rounded-full font-bold hover:bg-off-white transition-colors"
                 >
                   Enquire Now <ArrowRight className="inline ml-2 w-4 h-4" />
                 </Link>
                 <div className="flex items-center text-white/90">
                   <MapPin className="w-5 h-5 mr-3 text-medical-green" />
                   <div>
-                    <p className="font-semibold text-sm">
-                      Our Head Office Location
-                    </p>
+                    <p className="font-semibold text-sm">Our Coverage</p>
                     <p className="text-xs text-white/70">
-                      Al Muwaihat, Ajman, UAE
+                      Serving all 7 Emirates across the UAE
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="lg:w-[45%] min-h-[300px] relative">
+            <div className="lg:w-[45%] min-h-[200px] h-[500px] relative bg-white">
               <img
-                src={pharmacyExteriorImg}
-                className="w-full h-full object-cover"
-                alt="Al Khaleej Store Office"
+                src={wholesaleImg}
+                className="w-full h-full object-cover absolute inset-0"
+                alt="Wholesale Distribution Center"
               />
               <div className="absolute top-0 left-0 w-full h-32 lg:w-40 lg:h-full bg-gradient-to-b lg:bg-gradient-to-r from-[#0cb5a9]  to-transparent" />
             </div>
