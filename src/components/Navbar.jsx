@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,22 +16,26 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Use scrolled style if on any page other than Home, or if scrolled down
+  const navbarScrolled = isScrolled || location.pathname !== "/";
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled
+        navbarScrolled
           ? "bg-white/90 backdrop-blur-md border-b border-gray-100"
           : "bg-white border-b border-gray-100 lg:bg-transparent lg:border-transparent"
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <div 
+        <Link 
+          to="/"
           className={`flex-shrink-0 cursor-pointer flex items-center transition-all duration-300 ${
-            !isScrolled 
+            !navbarScrolled 
               ? "lg:bg-transparent lg:backdrop-blur-none lg:p-0 lg:shadow-none" 
               : ""
           }`}
@@ -39,40 +45,39 @@ const Navbar = () => {
             alt="Al Khaleej Store for Drugs and Medical Instruments"
             className="w-[200px] lg:w-[280px] h-auto object-contain"
           />
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-10">
           {[
-            "Home",
-            "About",
-            "Products",
-            "Distribution",
-            "Retail Pharmacies",
-            "Contact",
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+            { name: "Products", path: "/products" },
+            { name: "Distribution", path: "/distribution" },
+            { name: "Contact", path: "/contact" },
           ].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(" ", "-")}`}
+            <Link
+              key={item.name}
+              to={item.path}
               className={`text-sm font-medium transition-colors ${
-                isScrolled
+                navbarScrolled
                   ? "text-charcoal hover:text-medical-teal"
                   : "text-white/90 hover:text-white"
               }`}
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
         </div>
 
         {/* CTA */}
         <div className="hidden lg:block">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="px-6 py-2.5 bg-gradient-to-r from-medical-blue to-medical-teal text-white rounded-full text-sm font-medium hover:shadow-lg transition-all hover:-translate-y-0.5"
           >
             Enquire Now
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button - simplified */}
@@ -127,29 +132,28 @@ const Navbar = () => {
           >
             <div className="px-6 py-4 flex flex-col space-y-4">
               {[
-                "Home",
-                "About",
-                "Products",
-                "Distribution",
-                "Retail Pharmacies",
-                "Contact",
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Products", path: "/products" },
+                { name: "Distribution", path: "/distribution" },
+                { name: "Contact", path: "/contact" },
               ].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(" ", "-")}`}
+                <Link
+                  key={item.name}
+                  to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-lg font-medium text-charcoal hover:text-medical-teal transition-colors py-2 border-b border-gray-50 last:border-0"
                 >
-                  {item}
-                </a>
+                  {item.name}
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-medical-blue to-medical-teal text-white rounded-full text-center font-medium shadow-md"
               >
                 Enquire Now
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

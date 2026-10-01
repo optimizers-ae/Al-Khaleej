@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Smartphone, Clock } from "lucide-react";
 import logo from "../assets/logo.png";
@@ -157,11 +158,10 @@ const Footer = () => {
           >
             <h4 className="text-lg font-display text-white mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm text-white/80 font-light flex flex-col items-center md:items-start">
-              <li><a href="#home" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Home</a></li>
-              <li><a href="#about" className="hover:text-white hover:translate-x-1 inline-block transition-transform">About Us</a></li>
-              <li><a href="#products" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Products</a></li>
-              <li><a href="#distribution" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Distribution</a></li>
-              <li><a href="#retail-pharmacies" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Retail Pharmacies</a></li>
+              <li><Link to="/" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Home</Link></li>
+              <li><Link to="/about" className="hover:text-white hover:translate-x-1 inline-block transition-transform">About Us</Link></li>
+              <li><Link to="/products" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Products</Link></li>
+              <li><Link to="/distribution" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Distribution</Link></li>
             </ul>
           </motion.div>
 
