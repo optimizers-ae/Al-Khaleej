@@ -18,6 +18,7 @@ import imgUroCran from "../assets/products/uro_cran.png";
 import imgLactoVox from "../assets/products/lacto_vox.png";
 
 import heroPharmacyImg from "../assets/images/hero_pharmacy.jpg";
+import heroPharmacyMobileImg from "../assets/images/hero-pharmacy-mobile.webp";
 import catPharmaImg from "../assets/images/cat_pharma.jpg";
 import catSupplementsImg from "../assets/images/cat_supplements.jpg";
 import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
@@ -84,54 +85,72 @@ export default function Home() {
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-screen flex items-center pt-20">
+      <section className="relative w-full min-h-[85vh] lg:min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 h-full">
-          <div className="sticky top-0 w-full h-[85vh] lg:h-[110vh] overflow-hidden">
-            <img
-              src={heroPharmacyImg}
-              alt="Premium Pharmacy Showcase"
-              className="w-full h-full object-cover object-center sticky"
-            />
-            {/* Dark Overlay for readability */}
-            {/* <div className="absolute inset-0 bg-[#001f3f]/30 mix-blend-multiply"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#001f3f]/40 to-transparent"></div> */}
+          <div className="w-full h-full overflow-hidden">
+            <picture>
+              {/* Mobile image */}
+              <source
+                media="(max-width: 767px)"
+                srcSet={heroPharmacyMobileImg}
+              />
+
+              {/* Desktop image */}
+              <img
+                src={heroPharmacyImg}
+                alt="Premium Pharmacy Showcase"
+                className="w-full h-full object-cover object-center"
+              />
+            </picture>
           </div>
         </div>
 
+        {/* Mobile readability gradient */}
+        {/* <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-black/10 to-black/50 md:hidden" /> */}
+
         {/* Content */}
-        <div className="relative z-10 max-w-[1440px] mx-auto px-4 lg:px-12 w-full pt-10 pb-20 lg:pt-20 lg:pb-40">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-5 lg:px-12 w-full pt-10 pb-20 lg:pt-20 lg:pb-40 -mt-24 lg:mt-0">
           <FadeIn delay={0.1}>
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex items-center space-x-3 mb-5 lg:mb-6">
               <div className="h-[2px] w-6 bg-medical-teal rounded-full" />
+
               <span className="text-xs lg:text-sm font-bold tracking-[0.2em] text-white/90 capitalize">
                 Since 1997
               </span>
             </div>
           </FadeIn>
+
           <FadeIn delay={0.2}>
-            <h1 className="text-white text-4xl lg:text-[70px] mb-6 leading-[1.1] max-w-4xl">
-              Trusted Healthcare <br /> Distribution <br /> Across the UAE
+            <h1 className="text-white text-4xl sm:text-5xl lg:text-[70px] mb-5 lg:mb-6 leading-[1.05] lg:leading-[1.1] max-w-4xl">
+              Trusted Healthcare
+              <br />
+              Distribution
+              <br />
+              Across the UAE
             </h1>
           </FadeIn>
+
           <FadeIn delay={0.3}>
-            <p className="text-white/80 text-sm lg:text-lg max-w-lg mb-10 leading-relaxed ">
+            <p className="text-white/90 text-sm lg:text-lg max-w-lg mb-8 lg:mb-10 leading-relaxed">
               A leading distributor, retailer and complete healthcare provider,
               delivering trusted medicines, supplements and medical instruments
               across the UAE.
             </p>
           </FadeIn>
+
           <FadeIn delay={0.4}>
-            <Link
-              to="/contact"
-              className="bg-white text-medical-blue px-8 py-4 rounded-full font-bold hover:bg-off-white transition-colors"
-            >
-              Enquire Now <ArrowRight className="inline ml-2 w-4 h-4" />
-            </Link>
+            <div className="lg:pb-10">
+              <Link
+                to="/contact"
+                className="inline-flex items-center bg-white text-medical-blue px-7 py-4 rounded-full font-bold hover:bg-off-white transition-colors"
+              >
+                Enquire Now
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
           </FadeIn>
         </div>
-
-        {/* Curved Bottom Divider */}
       </section>
 
       {/* CATEGORIES SECTION */}

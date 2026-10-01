@@ -175,10 +175,10 @@ const Footer = () => {
           >
             <h4 className="text-lg font-display text-white mb-6">Contact Info</h4>
             <ul className="space-y-4 text-sm text-white/80 font-light flex flex-col items-center md:items-start">
-              <li className="flex items-center justify-center md:justify-start">
+              {/* <li className="flex items-center justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-[#32f2f1] mr-3 shrink-0" />
                 <span>Serving all 7 Emirates across the UAE</span>
-              </li>
+              </li> */}
               <li className="flex items-center justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-[#32f2f1] mr-3 shrink-0" />
                 <a href="mailto:info@khaleejdrugstore.ae" className="hover:text-white transition-colors">
