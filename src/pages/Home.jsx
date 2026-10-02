@@ -185,7 +185,7 @@ export default function Home() {
               },
             ].map((cat, i) => (
               <FadeIn key={i} delay={0.1 * i} className="group">
-                <div className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
+                <Link to="/products" className="block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
                   <div className="h-64 w-full overflow-hidden">
                     <img
                       src={cat.img}
@@ -201,7 +201,7 @@ export default function Home() {
                       {cat.sub}
                     </p>
                   </div>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>

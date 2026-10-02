@@ -54,6 +54,7 @@ const Navbar = () => {
             { name: "About", path: "/about" },
             { name: "Products", path: "/products" },
             { name: "Distribution", path: "/distribution" },
+            { name: "Retail Pharmacies", path: "/retail-pharmacies" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
             <Link
@@ -136,6 +137,7 @@ const Navbar = () => {
                 { name: "About", path: "/about" },
                 { name: "Products", path: "/products" },
                 { name: "Distribution", path: "/distribution" },
+                { name: "Retail Pharmacies", path: "/retail-pharmacies" },
                 { name: "Contact", path: "/contact" },
               ].map((item) => (
                 <Link

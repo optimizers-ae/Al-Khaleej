@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Target, Eye, ShieldCheck, HeartPulse } from "lucide-react";
-import aboutBannerImg from "../assets/images/about_banner.jpg";
+import aboutBannerImg from "../assets/images/new_about_banner.jpg";
 import pharmacyAboutImg from "../assets/images/pharmacy_about_us.jpg";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
@@ -85,7 +85,7 @@ const About = () => {
               </div>
               <div className="w-px h-12 bg-gray-200" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-medical-teal mb-1">340+</p>
+                <p className="text-3xl font-bold text-medical-teal mb-1">500+</p>
                 <p className="text-xs font-semibold text-charcoal/60 uppercase tracking-widest">Customers</p>
               </div>
               <div className="w-px h-12 bg-gray-200" />
