@@ -24,7 +24,6 @@ import catSupplementsImg from "../assets/images/cat_supplements.jpg";
 import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
 import catEssentialsImg from "../assets/images/cat_essentials.jpg";
 import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
-import logo from "../assets/logo.png";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
