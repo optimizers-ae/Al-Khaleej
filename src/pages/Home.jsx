@@ -24,6 +24,7 @@ import catSupplementsImg from "../assets/images/cat_supplements.jpg";
 import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
 import catEssentialsImg from "../assets/images/cat_essentials.jpg";
 import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
+import uaeMapImg from "../assets/images/simple_uae_map.jpg";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
@@ -203,6 +204,59 @@ export default function Home() {
                 </Link>
               </FadeIn>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DISTRIBUTION SECTION */}
+      <section className="bg-medical-teal/[0.03] w-full py-20 lg:py-32 border-y border-medical-teal/10">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div className="lg:w-1/2">
+              <FadeIn>
+                <Eyebrow text="Our Network" />
+                <h2 className="text-4xl lg:text-5xl capitalize mb-6 leading-tight text-charcoal">
+                  Comprehensive Distribution Across the UAE
+                </h2>
+                <p className="text-charcoal/70 text-lg mb-8 leading-relaxed font-light">
+                  With a robust supply chain and deep industry expertise, Al Khaleej ensures that pharmacies, hospitals, and clinics across all seven Emirates have consistent access to premium healthcare products.
+                </p>
+                <div className="grid grid-cols-2 gap-8 mb-10">
+                  <div className="flex flex-col">
+                    <span className="text-4xl font-bold text-medical-blue mb-2">100%</span>
+                    <span className="text-sm font-medium text-charcoal/60 uppercase tracking-wider">Coverage in UAE</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-4xl font-bold text-medical-teal mb-2">25+</span>
+                    <span className="text-sm font-medium text-charcoal/60 uppercase tracking-wider">Years of Trust</span>
+                  </div>
+                </div>
+                <Link
+                  to="/distribution"
+                  className="inline-flex items-center text-medical-teal font-semibold hover:text-medical-blue transition-colors group text-lg"
+                >
+                  Learn about our distribution
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </FadeIn>
+            </div>
+            
+            <div className="lg:w-1/2 w-full">
+              <FadeIn delay={0.2} direction="left">
+                <div className="relative rounded-[32px] overflow-hidden shadow-2xl bg-white p-2">
+                  <div className="rounded-[24px] overflow-hidden relative h-[400px] bg-[#f8fafb]">
+                    <img 
+                      src={uaeMapImg} 
+                      alt="UAE Distribution Network Map" 
+                      className="w-full h-full object-contain p-4"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-medical-blue/60 to-transparent flex items-end p-8">
+                      <p className="text-white text-xl font-medium drop-shadow-md">Reliable logistics for a healthier tomorrow.</p>
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
           </div>
         </div>
       </section>

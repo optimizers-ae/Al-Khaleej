@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Building2, CheckCircle2, TrendingUp, Globe2 } from "lucide-react";
 import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
+import heroMapImg from "../assets/images/uae_distribution_map.jpg";
+import logisticsImg from "../assets/images/pharma_logistics.jpg";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
@@ -30,23 +32,58 @@ const Eyebrow = ({ text }) => (
 
 const Distribution = () => {
   return (
-    <main className="w-full bg-white overflow-x-hidden pt-32 pb-20">
-      <section className="max-w-[1440px] mx-auto px-4 lg:px-12 text-center mb-20">
-        <FadeIn>
-          <Eyebrow text="Distribution Network" />
-          <h1 className="text-4xl lg:text-6xl mb-6 leading-tight max-w-4xl mx-auto">
-            Extensive Reach, Unmatched Reliability
-          </h1>
-          <p className="text-charcoal/60 text-lg max-w-3xl mx-auto font-light">
-            With a robust distribution network spanning the entire UAE, we ensure seamless, timely delivery of top-tier medical supplies to healthcare institutions, pharmacies, and clinics.
-          </p>
-        </FadeIn>
+    <main className="w-full bg-white overflow-x-hidden pb-20">
+      <section className="relative w-full h-[65vh] min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden mb-20 bg-[#121212]">
+        {/* Background Image (Right) */}
+        <div className="absolute inset-0 z-0 flex justify-end">
+          <div className="w-full lg:w-[60%] h-full">
+            <img 
+              src={heroMapImg} 
+              alt="Distribution Network" 
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        </div>
+        
+        {/* Solid Color Overlay (Left) - Tablet & Desktop */}
+        <div 
+          className="absolute inset-0 z-10 bg-medical-teal w-full md:w-[75%] lg:w-[65%] h-full hidden md:block"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)' }}
+        ></div>
+        
+        {/* Mobile Gradient Overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-medical-teal via-medical-teal/80 to-transparent md:hidden"></div>
+        {/* Desktop Overlay  */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-medical-teal from-50% via-medical-teal/80 via-60% to-transparent hidden md:block"></div>
+
+
+        {/* Content */}
+        <div className="relative z-30 max-w-[1440px] mx-auto px-6 lg:px-12 w-full mt-16 lg:mt-0">
+          <div className="max-w-xl text-white">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-5xl lg:text-7xl font-bold mb-6 font-display text-white"
+            >
+              Distribution
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-white/90 text-lg md:text-xl font-light leading-relaxed"
+            >
+              All divisions strive to deliver the best healthcare products and services from around the world into the dynamic and fast-growing UAE healthcare ecosystem.
+            </motion.p>
+          </div>
+        </div>
       </section>
 
       <section className="max-w-[1440px] mx-auto px-4 lg:px-12 mb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <FadeIn direction="right" className="rounded-[32px] overflow-hidden shadow-2xl h-[500px]">
-            <img src={wholesaleImg} alt="Wholesale Logistics" className="w-full h-full object-cover" />
+            <img src={logisticsImg} alt="Pharmaceutical Logistics Center" className="w-full h-full object-cover" />
           </FadeIn>
           
           <FadeIn direction="left">
