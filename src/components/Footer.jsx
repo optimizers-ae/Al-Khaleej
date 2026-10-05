@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Smartphone, Clock } from "lucide-react";
+import { Mail, Phone, Smartphone, Clock } from "lucide-react";
 import logo from "../assets/logo.png";
 import mapImage from "../assets/images/dotted_map.png";
 
@@ -77,39 +76,37 @@ const Footer = () => {
       {/* Main Bottom Section Wrapper */}
       <div className="relative z-20 max-w-[1200px] mx-auto px-6 lg:px-24 -mt-40 md:-mt-48">
         
-        {/* Newsletter Card */}
+        {/* Partner With Us Card */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-[#2b6ba1] via-[#4096a6] to-[#55b18b] rounded-2xl md:rounded-[2rem] p-8 md:p-14 shadow-2xl backdrop-blur-md mb-20 relative overflow-hidden border border-white/10"
+          className="bg-gradient-to-r from-[#2b6ba1] via-[#4096a6] to-[#12d287] rounded-2xl md:rounded-[2rem] p-8 md:p-14 shadow-2xl backdrop-blur-md mb-20 relative overflow-hidden border border-white/10"
         >
-          <div className="relative z-10 text-center max-w-2xl mx-auto">
+          <div className="absolute inset-0 bg-white/5 mix-blend-overlay"></div>
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-light mb-4 text-white capitalize">
-              Sign Up <span className="font-bold">For Newsletter</span>
+              Become a Distribution Partner
             </h3>
-            <p className="text-sm md:text-base text-white/90 mb-8 font-light leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum ultrices gravida.
+            <p className="text-sm md:text-base text-white/90 mb-8 font-light leading-relaxed max-w-2xl mx-auto">
+              Looking to source premium medical supplies for your hospital, clinic, or pharmacy? Connect with our wholesale division today for unmatched reliability and an extensive healthcare catalog.
             </p>
             
-            <form className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto">
-              <div className="relative w-full sm:flex-1 group">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 group-focus-within:text-[#0f092d] transition-colors" />
-                <input 
-                  type="email" 
-                  placeholder="Email address" 
-                  className="w-full bg-white text-gray-800 rounded-full py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#170f3b] shadow-inner transition-shadow text-center sm:text-left"
-                  required
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full sm:w-auto bg-[#1c2833] hover:bg-[#121a22] text-white font-semibold rounded-full py-4 px-8 transition-all duration-300 text-sm tracking-wider whitespace-nowrap shadow-lg hover:shadow-xl hover:-translate-y-1"
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link 
+                to="/contact" 
+                className="w-full sm:w-auto bg-white text-[#2b6ba1] font-bold rounded-full py-4 px-10 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1"
               >
-                SIGN UP
-              </button>
-            </form>
+                Submit Inquiry
+              </Link>
+              <a 
+                href="mailto:info@khaleejdrugstore.ae"
+                className="w-full sm:w-auto bg-transparent border-2 border-white text-white font-semibold rounded-full py-3.5 px-10 transition-all duration-300 hover:bg-white hover:text-[#2b6ba1]"
+              >
+                Email Us
+              </a>
+            </div>
           </div>
         </motion.div>
 
