@@ -1,9 +1,29 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Building2, CheckCircle2, TrendingUp, Globe2 } from "lucide-react";
+import { Building2, CheckCircle2, TrendingUp, Globe2, ChevronLeft, ChevronRight } from "lucide-react";
 import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
 import heroMapImg from "../assets/images/uae_distribution_map.jpg";
 import logisticsImg from "../assets/images/pharma_logistics.jpg";
+
+import supplier1 from "../assets/suppliers/supplier-1.png";
+import supplier2 from "../assets/suppliers/supplier-2.png";
+import supplier3 from "../assets/suppliers/supplier-3.png";
+import supplier4 from "../assets/suppliers/supplier-4.png";
+import supplier5 from "../assets/suppliers/supplier-5.png";
+import supplier6 from "../assets/suppliers/supplier-6.png";
+import supplier7 from "../assets/suppliers/supplier-7.png";
+import supplier8 from "../assets/suppliers/supplier-8.png";
+import supplier9 from "../assets/suppliers/supplier-9.png";
+import supplier10 from "../assets/suppliers/supplier-10.png";
+import supplier12 from "../assets/suppliers/supplier-12.png";
+import supplier13 from "../assets/suppliers/supplier-13.png";
+import supplier14 from "../assets/suppliers/supplier-14.png";
+
+const suppliers = [
+  supplier1, supplier2, supplier3, supplier4, supplier5,
+  supplier6, supplier7, supplier8, supplier9, supplier10,
+  supplier12 , supplier13 , supplier14
+];
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
@@ -31,6 +51,29 @@ const Eyebrow = ({ text }) => (
 );
 
 const Distribution = () => {
+  const sliderRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isHovered) return;
+    let animationFrameId;
+    const scroll = () => {
+      if (sliderRef.current) {
+        sliderRef.current.scrollLeft += 1;
+        if (sliderRef.current.scrollLeft >= sliderRef.current.scrollWidth / 2) {
+          sliderRef.current.scrollLeft = 0;
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+    animationFrameId = requestAnimationFrame(scroll);
+    
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isHovered]);
+
+  const nextSlide = () => sliderRef.current?.scrollBy({ left: 300, behavior: "smooth" });
+  const prevSlide = () => sliderRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       <section className="relative w-full h-[65vh] min-h-[500px] lg:min-h-[600px] flex items-center overflow-hidden mb-20 bg-[#121212]">
@@ -111,18 +154,51 @@ const Distribution = () => {
       </section>
       
       <section className="bg-off-white py-24">
-        <div className="max-w-[1440px] mx-auto px-4 lg:px-12 text-center">
+        <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
+          <div className="text-center mb-16">
+            <FadeIn>
+              <h2 className="text-3xl lg:text-5xl mb-6">Our Suppliers</h2>
+              <p className="text-charcoal/60 text-lg max-w-2xl mx-auto font-light">
+                We exclusively distribute products from world-renowned brands and our trusted in-house labels.
+              </p>
+            </FadeIn>
+            {/* <FadeIn className="flex space-x-3">
+              <button
+                onClick={prevSlide}
+                className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-white hover:border-transparent hover:shadow-md transition-all bg-white"
+              >
+                <ChevronLeft className="w-5 h-5 text-charcoal" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-white hover:border-transparent hover:shadow-md transition-all bg-white"
+              >
+                <ChevronRight className="w-5 h-5 text-charcoal" />
+              </button>
+            </FadeIn> */}
+          </div>
+
           <FadeIn>
-            <h2 className="text-3xl lg:text-5xl mb-6">Our Distribution Partners</h2>
-            <p className="text-charcoal/60 text-lg max-w-2xl mx-auto font-light mb-16">
-              We exclusively distribute products from world-renowned brands and our trusted in-house labels like Pure Cure and Vox Dei Labs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              {['Pure Cure', 'Vox Dei Labs', 'Amina Hospital', 'Al Sharq Hospital', 'Makkah Pharmaceuticals', 'Thumbay Pharmacy', 'Right Health'].map((brand, i) => (
-                <div key={i} className="px-8 py-4 bg-white rounded-full shadow-sm text-lg font-medium text-charcoal/80 border border-gray-100 hover:border-medical-teal hover:text-medical-teal transition-colors">
-                  {brand}
-                </div>
-              ))}
+            <div className="relative -mx-4 px-4 lg:mx-0 lg:px-0">
+              <div
+                ref={sliderRef}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="flex space-x-6 overflow-x-auto pb-8 pt-4 items-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {[...suppliers, ...suppliers].map((logo, i) => (
+                  <div 
+                    key={i} 
+                    className={`w-[184px] min-w-[184px] md:w-[253px] md:min-w-[253px] h-32 md:h-40 bg-white rounded-2xl border transition-all flex items-center justify-center p-6 shrink-0 ${
+                      i % suppliers.length === 4 || i % suppliers.length === 5 
+                        ? 'border-medical-teal shadow-[0_8px_30px_rgba(18,210,135,0.25)] ring-2 ring-medical-teal/20 scale-105 z-10 relative' 
+                        : 'border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:border-medical-teal hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1'
+                    }`}
+                  >
+                    <img src={logo} alt={`Supplier ${(i % suppliers.length) + 1}`} className="w-full h-full object-contain" />
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>

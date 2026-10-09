@@ -41,19 +41,22 @@ const Eyebrow = ({ text }) => (
 );
 
 const products = [
-  { name: "Ova Pure", img: imgOvaPure, category: "Pure Cure" },
-  { name: "Pregna Pure", img: imgPregnaPure, category: "Pure Cure" },
-  { name: "Pure Biotin", img: imgPureBiotin, category: "Pure Cure" },
-  { name: "Pure D3 Drop", img: imgPureD3Drop, category: "Pure Cure" },
-  { name: "Pure Fert", img: imgPureFert, category: "Pure Cure" },
-  { name: "Pure Iron", img: imgPureIron, category: "Pure Cure" },
-  { name: "Pure Omega D3", img: imgPureOmegaD3, category: "Pure Cure" },
-  { name: "Voxrol D3", img: imgVoxrolD3, category: "Vox Dei Labs" },
-  { name: "Vox C", img: imgVoxC, category: "Vox Dei Labs" },
-  { name: "Ocal D3", img: imgOcalD3, category: "Vox Dei Labs" },
-  { name: "Vox B", img: imgVoxB, category: "Vox Dei Labs" },
-  { name: "Uro Cran", img: imgUroCran, category: "Vox Dei Labs" },
-  { name: "Lacto Vox", img: imgLactoVox, category: "Vox Dei Labs" },
+  { name: "Ova Pure", img: imgOvaPure, category: "Pure Cure", link: "https://puremed.ae/product/ova-pure/" }, // best guess for ova pure
+  { name: "Pregna Pure", img: imgPregnaPure, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pregna-pure-tablets-30-tablets/" },
+  { name: "Pure Biotin", img: imgPureBiotin, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-biotin-tablets-30-tablets/" },
+  { name: "Pure D3 Drop", img: imgPureD3Drop, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-d3-drops-30-ml/" },
+  { name: "Pure Fert", img: imgPureFert, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-fert-tablets-60-tablets/" },
+  { name: "Pure Iron", img: imgPureIron, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-iron-tablets-30-tablets/" },
+  { name: "Pure Omega D3", img: imgPureOmegaD3, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-omega-d3-softgel-capsules-30-softgels/" },
+  { name: "Osteo Pure", img: imgOcalD3, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-osteo-pure-tablets-30-tablets/" },
+  { name: "Multi Pure", img: imgPureBiotin, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-multi-pure-tablets-30-tablets/" },
+  { name: "Pure B Syrup", img: imgPureD3Drop, category: "Pure Cure", link: "https://puremed.ae/product/pure-cure-pure-b-syrup-200-ml/" },
+  { name: "Voxrol D3", img: imgVoxrolD3, category: "Vox Dei Labs", link: "https://puremed.ae/product/voxrol-d3-tablets-vitamin-d3-1000-iu-30-tablets/" },
+  { name: "Vox C", img: imgVoxC, category: "Vox Dei Labs", link: "https://puremed.ae/product/vox-c-chewable-tablets-vitamin-c-zinc-vitamin-d3-30-tablets/" },
+  { name: "Ocal D3", img: imgOcalD3, category: "Vox Dei Labs", link: "https://puremed.ae/product/o-cal-d3-tablets-30-tablets/" },
+  { name: "Vox B", img: imgVoxB, category: "Vox Dei Labs", link: "https://puremed.ae/product/vox-b-forte-tablets-30-tablets/" },
+  { name: "Uro Cran", img: imgUroCran, category: "Vox Dei Labs", link: "https://puremed.ae/product/uro-cran-tablets-ellirose-d-mannose-cranberry-30-tablets/" },
+  { name: "Lacto Vox", img: imgLactoVox, category: "Vox Dei Labs", link: "https://puremed.ae/product/lacto-vox-digestive-health-supplement-capsules-30-capsules/" },
 ];
 
 const Products = () => {
@@ -99,7 +102,12 @@ const Products = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProducts.map((prod, i) => (
             <FadeIn key={`${prod.name}-${activeCategory}`} delay={0.05 * (i % 4)} className="group">
-              <div className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center h-full">
+              <a
+                href={prod.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-[24px] p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center h-full block cursor-pointer"
+              >
                 <div className="h-48 w-full bg-off-white rounded-xl mb-6 flex items-center justify-center overflow-hidden">
                   <img
                     src={prod.img}
@@ -107,13 +115,13 @@ const Products = () => {
                     alt={prod.name}
                   />
                 </div>
-                <h4 className="text-xl font-bold text-center w-full text-charcoal mb-2">
+                <h4 className="text-xl font-bold text-center w-full text-charcoal mb-2 group-hover:text-medical-teal transition-colors">
                   {prod.name}
                 </h4>
                 <span className="px-3 py-1 bg-medical-teal/10 text-medical-teal text-xs font-semibold rounded-full uppercase tracking-wider">
                   {prod.category}
                 </span>
-              </div>
+              </a>
             </FadeIn>
           ))}
         </div>
