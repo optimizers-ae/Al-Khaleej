@@ -1,23 +1,9 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 
-import imgOvaPure from "../assets/products/ova_pure.png";
-import imgPregnaPure from "../assets/products/pregna_pure.png";
-import imgPureBiotin from "../assets/products/pure_biotin.png";
-import imgPureD3Drop from "../assets/products/pure_d3_drop.png";
-import imgPureFert from "../assets/products/pure_fert.png";
-import imgPureIron from "../assets/products/pure_iron.png";
-import imgPureOmegaD3 from "../assets/products/pure_omega_d3.png";
-import imgVoxrolD3 from "../assets/products/voxrol-d3.png";
-import imgVoxC from "../assets/products/voxrol-c.png";
-import imgOcalD3 from "../assets/products/ocal-d3.png";
-import imgVoxB from "../assets/products/vox-b.png";
-import imgUroCran from "../assets/products/uro_cran.png";
-import imgLactoVox from "../assets/products/lacto_vox.png";
-
-import heroPharmacyImg from "../assets/images/hero_pharmacy.jpg";
+import heroPharmacyImg from "../assets/images/hero_pharmacy.png";
 import heroPharmacyMobileImg from "../assets/images/hero-pharmacy-mobile.webp";
 import catPharmaImg from "../assets/images/cat_pharma.jpg";
 import catSupplementsImg from "../assets/images/cat_supplements.jpg";
@@ -60,28 +46,6 @@ const Eyebrow = ({ text }) => (
 );
 
 export default function Home() {
-  const sliderRef = useRef(null);
-  const products = [
-    { name: "Ova Pure", img: imgOvaPure },
-    { name: "Pregna Pure", img: imgPregnaPure },
-    { name: "Pure Biotin", img: imgPureBiotin },
-    { name: "Pure D3 Drop", img: imgPureD3Drop },
-    { name: "Pure Fert", img: imgPureFert },
-    { name: "Pure Iron", img: imgPureIron },
-    { name: "Pure Omega D3", img: imgPureOmegaD3 },
-    { name: "Voxrol D3", img: imgVoxrolD3 },
-    { name: "Vox C", img: imgVoxC },
-    { name: "Ocal D3", img: imgOcalD3 },
-    { name: "Vox B", img: imgVoxB },
-    { name: "Uro Cran", img: imgUroCran },
-    { name: "Lacto Vox", img: imgLactoVox },
-  ];
-
-  const nextSlide = () =>
-    sliderRef.current?.scrollBy({ left: 320, behavior: "smooth" });
-  const prevSlide = () =>
-    sliderRef.current?.scrollBy({ left: -320, behavior: "smooth" });
-
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
@@ -100,7 +64,7 @@ export default function Home() {
               <img
                 src={heroPharmacyImg}
                 alt="Premium Pharmacy Showcase"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-[75%_center]"
               />
             </picture>
           </div>
