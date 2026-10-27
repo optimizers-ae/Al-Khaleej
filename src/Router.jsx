@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Products from "./pages/Products";
 import Distribution from "./pages/Distribution";
 import RetailPharmacies from "./pages/RetailPharmacies";
+import Careers from "./pages/Careers";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/distribution" element={<Distribution />} />
       <Route path="/retail-pharmacies" element={<RetailPharmacies />} />
+      <Route path="/careers" element={<Careers />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   );

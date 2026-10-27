@@ -48,13 +48,14 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-10">
+        <div className="hidden lg:flex items-center space-x-7 xl:space-x-9">
           {[
             { name: "Home", path: "/" },
             { name: "About", path: "/about" },
             { name: "Products", path: "/products" },
             { name: "Distribution", path: "/distribution" },
             { name: "Retail Pharmacies", path: "/retail-pharmacies" },
+            { name: "Careers", path: "/careers" },
             { name: "Contact", path: "/contact" },
           ].map((item) => (
             <Link
@@ -138,6 +139,7 @@ const Navbar = () => {
                 { name: "Products", path: "/products" },
                 { name: "Distribution", path: "/distribution" },
                 { name: "Retail Pharmacies", path: "/retail-pharmacies" },
+                { name: "Careers", path: "/careers" },
                 { name: "Contact", path: "/contact" },
               ].map((item) => (
                 <Link

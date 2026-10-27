@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, MapPin, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
 
 import heroPharmacyImg from "../assets/images/hero_pharmacy.png";
 import heroPharmacyMobileImg from "../assets/images/hero-pharmacy-mobile.webp";
@@ -10,7 +10,22 @@ import catSupplementsImg from "../assets/images/cat_supplements.jpg";
 import catInstrumentsImg from "../assets/images/cat_instruments.jpg";
 import catEssentialsImg from "../assets/images/cat_essentials.jpg";
 import wholesaleImg from "../assets/images/pharma_wholesale_vector.jpg";
+import logisticsImg from "../assets/images/pharma_logistics.jpg";
 import uaeMapImg from "../assets/images/simple_uae_map.jpg";
+
+import imgHyaluGel from "../assets/products/ubik_hyalugel.png";
+import imgZBlock from "../assets/products/ubik_z_block.png";
+import imgSebonia from "../assets/products/ubik_sebonia.png";
+import imgHydraSun from "../assets/products/ubik_hydrasun.png";
+import imgLipzlite from "../assets/products/ubik_lipzlite.png";
+import imgOvaPure from "../assets/products/ova_pure.png";
+import imgPregnaPure from "../assets/products/pregna_pure.png";
+import imgPureOmegaD3 from "../assets/products/pure_omega_d3.png";
+import imgPureBiotin from "../assets/products/pure_biotin.png";
+import imgVoxC from "../assets/products/voxrol-c.png";
+import imgVoxrolD3 from "../assets/products/voxrol-d3.png";
+import imgLactoVox from "../assets/products/lacto_vox.png";
+import logo from "../assets/logo.png";
 
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
@@ -45,7 +60,27 @@ const Eyebrow = ({ text }) => (
   </div>
 );
 
+const featuredProducts = [
+  { name: "HyaluGel 30g", brand: "UBiK", category: "Dermatology", img: imgHyaluGel, desc: "Aqueous Hyaluronic Acid Gel" },
+  { name: "Z Block SPF 50+", brand: "UBiK", category: "Sun Protection", img: imgZBlock, desc: "100% Zinc Oxide Sunscreen Gel" },
+  { name: "Sebonia Serum 20ml", brand: "UBiK", category: "Skincare", img: imgSebonia, desc: "Niacinamide Zinc Blemish Treatment" },
+  { name: "HydraSun SPF 30", brand: "UBiK", category: "Sun Protection", img: imgHydraSun, desc: "Moisturising Sunscreen Cream 50g" },
+  { name: "Lipzlite Cream 15g", brand: "UBiK", category: "Lip Care", img: imgLipzlite, desc: "Paraben-Free Lip Lightening Formula" },
+  { name: "Pure Omega D3", brand: "Pure Cure", category: "Supplements", img: imgPureOmegaD3, desc: "Cardiovascular & Brain Health Softgels" },
+  { name: "Pregna Pure", brand: "Pure Cure", category: "Maternal Care", img: imgPregnaPure, desc: "Complete Maternal Nutritional Support" },
+  { name: "Pure Biotin", brand: "Pure Cure", category: "Beauty & Wellness", img: imgPureBiotin, desc: "Hair, Skin & Nail Formula" },
+  { name: "Vox C Chewable", brand: "Vox Dei Labs", category: "Immunity", img: imgVoxC, desc: "Vitamin C + Zinc + Vitamin D3" },
+  { name: "Voxrol D3 1000 IU", brand: "Vox Dei Labs", category: "Bone Health", img: imgVoxrolD3, desc: "Clinical Vitamin D3 Tablets" },
+  { name: "Lacto Vox", brand: "Vox Dei Labs", category: "Digestive Health", img: imgLactoVox, desc: "Probiotic Multi-Strain Capsules" },
+];
+
 export default function Home() {
+  const sliderRef = useRef(null);
+
+  const nextSlide = () =>
+    sliderRef.current?.scrollBy({ left: 320, behavior: "smooth" });
+  const prevSlide = () =>
+    sliderRef.current?.scrollBy({ left: -320, behavior: "smooth" });
   return (
     <main className="w-full bg-white overflow-x-hidden pb-20">
       {/* HERO SECTION */}
@@ -121,49 +156,65 @@ export default function Home() {
       <section className="relative z-10 bg-white w-full py-16 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
           <FadeIn className="mb-10">
-            <Eyebrow text="Product Categories" />
+            <Eyebrow text="Core Services & Product Lines" />
             <h2 className="text-4xl lg:text-5xl capitalize">What We Offer</h2>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
               {
                 title: "Pharmaceuticals",
-                sub: "Trusted medicines for a healthier tomorrow",
+                sub: "Certified therapeutic formulations & essential medicines for pharmacies and clinics",
                 img: catPharmaImg,
+                link: "/products",
               },
               {
-                title: "Supplements",
-                sub: "Nutrition for a better, healthier life",
+                title: "Dietary Supplements",
+                sub: "Clinically formulated daily vitamins, omegas & minerals including Pure Cure range",
                 img: catSupplementsImg,
+                link: "/products",
+              },
+              {
+                title: "Derma & Skincare",
+                sub: "Advanced sunscreens, hyaluronic hydration & targeted serums including UBiK range",
+                img: catEssentialsImg,
+                link: "/products",
               },
               {
                 title: "Medical Instruments",
-                sub: "Quality instruments for better care",
+                sub: "Precision diagnostic instruments, hospital essentials & surgical supplies",
                 img: catInstrumentsImg,
+                link: "/products",
               },
               {
-                title: "Healthcare Essentials",
-                sub: "Everyday products for safer living",
-                img: catEssentialsImg,
+                title: "Distribution & Marketing",
+                sub: "Nationwide cold-chain distribution, regulatory compliance & strategic healthcare marketing",
+                img: logisticsImg,
+                link: "/distribution",
               },
             ].map((cat, i) => (
-              <FadeIn key={i} delay={0.1 * i} className="group">
-                <Link to="/products" className="block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300">
-                  <div className="h-64 w-full overflow-hidden">
+              <FadeIn key={i} delay={0.08 * i} className="group">
+                <Link to={cat.link} className="block bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_12px_35px_rgb(0,0,0,0.09)] hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                  <div className="h-56 w-full overflow-hidden bg-gray-50">
                     <img
                       src={cat.img}
                       alt={cat.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl capitalize mb-2 group-hover:text-medical-teal transition-colors">
-                      {cat.title}
-                    </h3>
-                    <p className="text-sm text-charcoal/60 font-light">
-                      {cat.sub}
-                    </p>
+                  <div className="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold capitalize mb-2 group-hover:text-medical-teal transition-colors">
+                        {cat.title}
+                      </h3>
+                      <p className="text-xs text-charcoal/60 font-light leading-relaxed">
+                        {cat.sub}
+                      </p>
+                    </div>
+                    <div className="mt-4 pt-3 border-t border-gray-100 flex items-center text-xs font-semibold text-medical-teal group-hover:text-medical-blue transition-colors">
+                      <span>Explore</span>
+                      <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               </FadeIn>
@@ -226,13 +277,13 @@ export default function Home() {
       </section>
 
       {/* FEATURED PRODUCTS CAROUSEL */}
-      {/* <section className="bg-off-white py-16 lg:py-24">
+      <section className="bg-off-white py-16 lg:py-24">
         <div className="max-w-[1440px] mx-auto px-4 lg:px-12">
           <div className="flex justify-between items-end mb-10">
             <FadeIn>
-              <Eyebrow text="Featured Products" />
+              <Eyebrow text="Product Portfolio" />
               <h2 className="text-4xl lg:text-5xl capitalize">
-                Premium Supply
+                Featured Formulations
               </h2>
             </FadeIn>
 
@@ -240,12 +291,14 @@ export default function Home() {
               <button
                 onClick={prevSlide}
                 className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-white hover:border-transparent hover:shadow-md transition-all"
+                aria-label="Previous products"
               >
                 <ChevronLeft className="w-5 h-5 text-charcoal" />
               </button>
               <button
                 onClick={nextSlide}
                 className="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center hover:bg-white hover:border-transparent hover:shadow-md transition-all bg-white shadow-sm"
+                aria-label="Next products"
               >
                 <ChevronRight className="w-5 h-5 text-charcoal" />
               </button>
@@ -257,31 +310,42 @@ export default function Home() {
               ref={sliderRef}
               className="flex space-x-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-              {products.map((prod, i) => (
+              {featuredProducts.map((prod, i) => (
                 <div
                   key={i}
-                  className="min-w-[260px] lg:min-w-[300px] snap-start bg-white rounded-2xl p-6 lg:p-8 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-shadow flex flex-col items-center"
+                  className="min-w-[270px] lg:min-w-[310px] snap-start bg-white rounded-2xl p-6 lg:p-7 border border-gray-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.08)] transition-all flex flex-col items-center group"
                 >
-                  <div className="h-48 w-full bg-gray-50/50 rounded-xl mb-6 flex items-center justify-center overflow-hidden">
+                  <div className="h-48 w-full bg-gray-50/70 rounded-xl mb-5 flex items-center justify-center overflow-hidden p-4">
                     <img
                       src={prod.img}
-                      className="h-36 object-contain mix-blend-multiply hover:scale-110 transition-transform duration-500"
+                      className="h-36 object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
                       alt={prod.name}
                       onError={(e) => (e.target.src = logo)}
                     />
                   </div>
-                  <h4 className="text-lg font-semibold text-center w-full text-charcoal truncate">
-                    {prod.name}
-                  </h4>
-                  <p className="text-xs text-medical-teal font-medium mt-2 capitalize tracking-wider">
-                    Premium
-                  </p>
+                  <div className="w-full text-center">
+                    <span className="inline-block px-2.5 py-0.5 bg-medical-teal/10 text-medical-teal text-[11px] font-bold rounded-full mb-2 uppercase tracking-wider">
+                      {prod.brand}
+                    </span>
+                    <h4 className="text-base font-bold text-charcoal truncate group-hover:text-medical-teal transition-colors">
+                      {prod.name}
+                    </h4>
+                    <p className="text-xs text-charcoal/60 font-light mt-1 mb-4 truncate">
+                      {prod.desc}
+                    </p>
+                    <Link
+                      to="/products"
+                      className="inline-flex items-center text-xs font-semibold text-medical-blue hover:text-medical-teal transition-colors"
+                    >
+                      View Details <ArrowRight className="w-3 h-3 ml-1" />
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* FOOTER CTA BANNER */}
       <section

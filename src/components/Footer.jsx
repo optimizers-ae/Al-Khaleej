@@ -159,6 +159,7 @@ const Footer = () => {
               <li><Link to="/about" className="hover:text-white hover:translate-x-1 inline-block transition-transform">About Us</Link></li>
               <li><Link to="/products" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Products</Link></li>
               <li><Link to="/distribution" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Distribution</Link></li>
+              <li><Link to="/careers" className="hover:text-[#32f2f1] hover:translate-x-1 inline-block transition-transform font-medium">Careers (Submit CV)</Link></li>
               <li><a href="https://puremed.ae" target="_blank" rel="noopener noreferrer" className="hover:text-[#32f2f1] hover:translate-x-1 inline-block transition-all font-medium text-white">Shop Online (puremed.ae)</a></li>
             </ul>
           </motion.div>

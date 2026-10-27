@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { Link } from "react-router-dom";
+import { MapPin, Phone, Mail, Clock, Send, Briefcase } from "lucide-react";
 
 import contactBannerImg from "../assets/images/contact_banner.jpg";
 
@@ -159,6 +160,24 @@ const Contact = () => {
           {/* Form */}
           <FadeIn direction="left" delay={0.2}>
             <div className="bg-white rounded-[32px] p-8 lg:p-12 shadow-[0_8px_40px_rgb(0,0,0,0.08)] border border-gray-100">
+              <div className="mb-8 p-5 bg-gradient-to-r from-medical-blue/5 to-medical-teal/10 border border-medical-teal/20 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center space-x-3.5">
+                  <div className="w-11 h-11 rounded-xl bg-medical-teal/15 text-medical-teal flex items-center justify-center shrink-0">
+                    <Briefcase className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-bold text-charcoal">Looking for job opportunities?</h5>
+                    <p className="text-xs text-charcoal/60 font-light">Submit your CV directly to our HR recruitment portal</p>
+                  </div>
+                </div>
+                <Link
+                  to="/careers"
+                  className="px-5 py-2.5 bg-medical-blue hover:bg-medical-teal text-white text-xs font-bold rounded-full transition-colors shrink-0 shadow-sm"
+                >
+                  Submit CV &rarr;
+                </Link>
+              </div>
+
               <h3 className="text-2xl lg:text-3xl mb-8">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
