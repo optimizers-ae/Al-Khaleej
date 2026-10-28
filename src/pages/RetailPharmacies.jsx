@@ -107,45 +107,92 @@ const features = [
 
 const pharmacies = [
   {
-    name: "Dar Al Sai Pharmacy",
-    address: "Rawdha 3, Ajman",
-    phone: "+971 6 747 0590",
-    mobile: "+971 58 535 2999",
-  },
-  {
     name: "Dar Al Shifa Pharmacy",
-    address: "Bustan, Ajman",
-    phone: "+971 6 740 0590",
-    mobile: "+971 54 547 4694",
-  },
-  {
-    name: "Royal Pharmacy",
-    address: "Liwara, Ajman",
+    address: "Liwara 2, 6355, Ajman, AE",
     phone: "+971 6 742 8119",
     mobile: "+971 50 246 1727",
   },
   {
+    name: "Dar Al Sai Pharmacy",
+    address: "Al Khartoum St, Rawdha 3, Ajman",
+    phone: "+971 6 747 0590",
+    mobile: "+971 58 535 2999",
+  },
+  {
     name: "Dar Al Mubarak Pharmacy",
-    address: "Rashediya 2, Ajman",
+    address: "Falcon Towers, Rashediya 2, Ajman",
     phone: "+971 6 747 7590",
     mobile: "+971 56 484 1909",
   },
   {
-    name: "Meydan Pharmacy",
-    address: "Hamediya, Ajman",
+    name: "Al Ittehad Pharmacy",
+    address: "Al Owan, Al Nakhil 1, Ajman",
+    phone: "+971 6 742 8119",
+    mobile: "+971 50 246 1727",
+  },
+  {
+    name: "Al Meydan Pharmacy",
+    address: "Garden City, Al Hamidiya 1, Ajman",
     phone: "+971 6 742 0590",
     mobile: "+971 56 581 6233",
+  },
+  {
+    name: "Dar Al Shifa Pharmacy (Br. 1)",
+    address: "Al Bustan - Liwara 1, Ajman",
+    phone: "+971 6 740 0590",
+    mobile: "+971 54 547 4694",
   },
 ];
 
 const mapLocations = [
-  { name: "Liwara 2, Ajman", address: "Ajman, 6355, إمارة عجمان, AE", url: "https://maps.google.com/?q=25.408,55.435", coords: [25.408, 55.435], phone: "+971 6 742 8119", hours: "8:00 AM - 12:00 AM" },
-  { name: "Dar Al Shifa Pharmacy", address: "Al Bustan - Ajman", url: "https://share.google/ViFTqGvpm2PkEsJza", coords: [25.401, 55.441], phone: "+971 6 740 0590", hours: "9:00 AM - 11:00 PM" },
-  { name: "Dar Al Mubarak Pharmacy", address: "Falcon Towers - Al Rashidiya 2", url: "https://maps.app.goo.gl/eKZsYJJN2NhjELZeA?g_st=iw", coords: [25.385, 55.474], phone: "+971 6 747 7590", hours: "8:30 AM - 11:30 PM" },
-  { name: "Al Ittehad Pharmacy", address: "Al Owan - Al Nakhil 1", url: "https://maps.app.goo.gl/81Uuz8smvCgiEAcY8?g_st=iwb", coords: [25.412, 55.436], phone: "+971 6 742 8119", hours: "9:00 AM - 10:00 PM" },
-  { name: "Al Meydan Pharmacy", address: "Al Jerf Gardens Area", url: "https://maps.app.goo.gl/Vek5rNGoqDHRmPKm8?g_st=awb", coords: [25.403, 55.494], phone: "+971 6 742 0590", hours: "9:00 AM - 11:00 PM" },
-  { name: "Dar Al Sai Pharmacy", address: "Rawdha 3, Ajman", url: "https://maps.app.goo.gl/cMyh3yYZejXJpuTBA", coords: [25.395, 55.450], phone: "+971 6 747 0590", hours: "8:00 AM - 12:00 AM" },
-  { name: "Royal Pharmacy", address: "Liwara, Ajman", url: "https://maps.app.goo.gl/cMyh3yYZejXJpuTBA", coords: [25.396, 55.451], phone: "+971 6 742 8119", hours: "9:00 AM - 11:00 PM" }
+  {
+    name: "Dar Al Shifa Pharmacy (Liwara 2)",
+    address: "Liwara 2, عجمان, 6355, إمارة عجمان, AE",
+    url: "https://www.google.com/maps/search/Dar%20Al%20Shifa%20Pharmacy/@25.40896987915039,55.44704818725586,17z?hl=en",
+    coords: [25.408970, 55.447048],
+    phone: "+971 6 742 8119",
+    hours: "8:00 AM - 12:00 AM"
+  },
+  {
+    name: "Dar Al Sai Pharmacy (Puremed)",
+    address: "Al Khartoum St, Al Rawda 3, Ajman, UAE",
+    url: "https://share.google/ViFTqGvpm2PkEsJza",
+    coords: [25.389800, 55.500300],
+    phone: "+971 6 747 0590",
+    hours: "8:00 AM - 12:00 AM"
+  },
+  {
+    name: "Dar Al Mubarak Pharmacy",
+    address: "Falcon Towers - A5 - B1 1st Floor, Al Rashidiya 2, Ajman, UAE",
+    url: "https://maps.app.goo.gl/eKZsYJJN2NhjELZeA?g_st=iw",
+    coords: [25.398695, 55.448563],
+    phone: "+971 6 747 7590",
+    hours: "8:30 AM - 11:30 PM"
+  },
+  {
+    name: "Al Ittehad Pharmacy",
+    address: "Al Owan - Al Nakhil 1, Ajman, UAE",
+    url: "https://maps.app.goo.gl/81Uuz8smvCgiEAcY8?g_st=iwb",
+    coords: [25.410670, 55.440930],
+    phone: "+971 6 742 8119",
+    hours: "8:00 AM - 12:00 AM"
+  },
+  {
+    name: "Al Meydan Pharmacy",
+    address: "J2 Building, Garden City, Al Jerf Gardens Area, Al Hamidiya 1, Ajman, UAE",
+    url: "https://maps.app.goo.gl/Vek5rNGoqDHRmPKm8?g_st=awb",
+    coords: [25.412600, 55.473000],
+    phone: "+971 6 742 0590",
+    hours: "8:00 AM - 11:00 PM"
+  },
+  {
+    name: "Dar Al Shifa Pharmacy (Br. 1)",
+    address: "Al Bustan - Liwara 1, Ajman, UAE",
+    url: "https://maps.app.goo.gl/cMyh3yYZejXJpuTBA",
+    coords: [25.415900, 55.449900],
+    phone: "+971 6 740 0590",
+    hours: "Open 24 Hours"
+  }
 ];
 
 const MapUpdater = ({ center }) => {
