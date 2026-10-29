@@ -262,23 +262,6 @@ const Careers = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  {/* Phone */}
-                  {/* <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-charcoal mb-2">
-                      Phone / WhatsApp *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      placeholder="+971 50 123 4567"
-                      className="w-full px-5 py-4 bg-off-white rounded-xl text-sm focus:ring-2 focus:ring-medical-teal/50 outline-none transition-shadow"
-                    />
-                  </div> */}
-
-                
                 </div>
 
               
