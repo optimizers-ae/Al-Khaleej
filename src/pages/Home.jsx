@@ -67,7 +67,7 @@ const featuredProducts = [
   { name: "HydraSun SPF 30", brand: "UBiK", category: "Sun Protection", img: imgHydraSun, desc: "Moisturising Sunscreen Cream 50g" },
   { name: "Lipzlite Cream 15g", brand: "UBiK", category: "Lip Care", img: imgLipzlite, desc: "Paraben-Free Lip Lightening Formula" },
   { name: "Pure Omega D3", brand: "Pure Cure", category: "Supplements", img: imgPureOmegaD3, desc: "Cardiovascular & Brain Health Softgels" },
-  { name: "Pregna Pure", brand: "Pure Cure", category: "Maternal Care", img: imgPregnaPure, desc: "Complete Maternal Nutritional Support" },
+  // { name: "Pregna Pure", brand: "Pure Cure", category: "Maternal Care", img: imgPregnaPure, desc: "Complete Maternal Nutritional Support" },
   { name: "Pure Biotin", brand: "Pure Cure", category: "Beauty & Wellness", img: imgPureBiotin, desc: "Hair, Skin & Nail Formula" },
   { name: "Vox C Chewable", brand: "Vox Dei Labs", category: "Immunity", img: imgVoxC, desc: "Vitamin C + Zinc + Vitamin D3" },
   { name: "Voxrol D3 1000 IU", brand: "Vox Dei Labs", category: "Bone Health", img: imgVoxrolD3, desc: "Clinical Vitamin D3 Tablets" },
@@ -99,7 +99,7 @@ export default function Home() {
               <img
                 src={heroPharmacyImg}
                 alt="Premium Pharmacy Showcase"
-                className="w-full h-full object-cover object-[75%_center]"
+                className="w-full h-full object-cove"
               />
             </picture>
           </div>

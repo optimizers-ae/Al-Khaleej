@@ -156,8 +156,8 @@ const mapLocations = [
   {
     name: "Dar Al Sai Pharmacy (Puremed)",
     address: "Al Khartoum St, Al Rawda 3, Ajman, UAE",
-    url: "https://share.google/ViFTqGvpm2PkEsJza",
-    coords: [25.389800, 55.500300],
+    url: "https://maps.app.goo.gl/2Gp3BXUBsj1TQv988",
+    coords: [25.42304015290062, 55.53713521298135],
     phone: "+971 6 747 0590",
     hours: "8:00 AM - 12:00 AM"
   },
@@ -165,7 +165,7 @@ const mapLocations = [
     name: "Dar Al Mubarak Pharmacy",
     address: "Falcon Towers - A5 - B1 1st Floor, Al Rashidiya 2, Ajman, UAE",
     url: "https://maps.app.goo.gl/eKZsYJJN2NhjELZeA?g_st=iw",
-    coords: [25.398695, 55.448563],
+    coords: [25.39881382884625, 55.44887631929309],
     phone: "+971 6 747 7590",
     hours: "8:30 AM - 11:30 PM"
   },
@@ -173,7 +173,7 @@ const mapLocations = [
     name: "Al Ittehad Pharmacy",
     address: "Al Owan - Al Nakhil 1, Ajman, UAE",
     url: "https://maps.app.goo.gl/81Uuz8smvCgiEAcY8?g_st=iwb",
-    coords: [25.410670, 55.440930],
+    coords: [25.41544745531094, 55.44390004298807],
     phone: "+971 6 742 8119",
     hours: "8:00 AM - 12:00 AM"
   },
@@ -181,7 +181,7 @@ const mapLocations = [
     name: "Al Meydan Pharmacy",
     address: "J2 Building, Garden City, Al Jerf Gardens Area, Al Hamidiya 1, Ajman, UAE",
     url: "https://maps.app.goo.gl/Vek5rNGoqDHRmPKm8?g_st=awb",
-    coords: [25.412600, 55.473000],
+    coords: [25.403867200064443, 55.508433709917334],
     phone: "+971 6 742 0590",
     hours: "8:00 AM - 11:00 PM"
   },
@@ -189,7 +189,7 @@ const mapLocations = [
     name: "Dar Al Shifa Pharmacy (Br. 1)",
     address: "Al Bustan - Liwara 1, Ajman, UAE",
     url: "https://maps.app.goo.gl/cMyh3yYZejXJpuTBA",
-    coords: [25.415900, 55.449900],
+    coords: [25.414798024341202, 55.44570475594864],
     phone: "+971 6 740 0590",
     hours: "Open 24 Hours"
   }
@@ -204,8 +204,8 @@ const MapUpdater = ({ center }) => {
 };
 
 const products = [
-  { name: "Ova Pure", img: imgOvaPure },
-  { name: "Pregna Pure", img: imgPregnaPure },
+  // { name: "Ova Pure", img: imgOvaPure },
+  // { name: "Pregna Pure", img: imgPregnaPure },
   { name: "Pure Biotin", img: imgPureBiotin },
   { name: "Pure D3 Drop", img: imgPureD3Drop },
   { name: "Pure Fert", img: imgPureFert },

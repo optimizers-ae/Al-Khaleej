@@ -83,8 +83,8 @@ const products = [
     link: "https://puremed.ae" 
   },
   // Pure Cure Range
-  { name: "Ova Pure", img: imgOvaPure, category: "Pure Cure", desc: "Specialized female reproductive & hormonal wellness support", link: "https://puremed.ae/product/ova-pure/" },
-  { name: "Pregna Pure", img: imgPregnaPure, category: "Pure Cure", desc: "Comprehensive maternal & prenatal nutritional formulation (30 tablets)", link: "https://puremed.ae/product/pure-cure-pregna-pure-tablets-30-tablets/" },
+  // { name: "Ova Pure", img: imgOvaPure, category: "Pure Cure", desc: "Specialized female reproductive & hormonal wellness support", link: "https://puremed.ae/product/ova-pure/" },
+  // { name: "Pregna Pure", img: imgPregnaPure, category: "Pure Cure", desc: "Comprehensive maternal & prenatal nutritional formulation (30 tablets)", link: "https://puremed.ae/product/pure-cure-pregna-pure-tablets-30-tablets/" },
   { name: "Pure Biotin", img: imgPureBiotin, category: "Pure Cure", desc: "High-potency hair, skin & nail structural support (30 tablets)", link: "https://puremed.ae/product/pure-cure-pure-biotin-tablets-30-tablets/" },
   { name: "Pure D3 Drop", img: imgPureD3Drop, category: "Pure Cure", desc: "Essential Vitamin D3 liquid drops for rapid absorption (30 ml)", link: "https://puremed.ae/product/pure-cure-pure-d3-drops-30-ml/" },
   { name: "Pure Fert", img: imgPureFert, category: "Pure Cure", desc: "Advanced fertility & antioxidant support complex (60 tablets)", link: "https://puremed.ae/product/pure-cure-pure-fert-tablets-60-tablets/" },
