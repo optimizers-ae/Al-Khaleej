@@ -303,8 +303,7 @@ const Distribution = () => {
             <FadeIn>
               <h2 className="text-3xl lg:text-5xl mb-6">Our Customers</h2>
               <p className="text-charcoal/60 text-lg max-w-2xl mx-auto font-light">
-                We exclusively distribute products from world-renowned brands
-                and our trusted in-house labels.
+               Trusted by leading hospitals, clinics, and healthcare providers across the region.
               </p>
             </FadeIn>
           </div>
