@@ -20,6 +20,17 @@ import imgSebonia from "../assets/products/ubik_sebonia.png";
 import imgHydraSun from "../assets/products/ubik_hydrasun.png";
 import imgLipzlite from "../assets/products/ubik_lipzlite.png";
 
+import imgAloePure from "../assets/products/aloe_soup.png";
+import imgIfitago from "../assets/products/ifitago_ubik.png";
+import imgMultiPure from "../assets/products/multi.png";
+import imgNalite from "../assets/products/nalite_ubik.jfif";
+import imgOsteoPure from "../assets/products/osteo-pure-tablets.png";
+import imgKoziPure from "../assets/products/pure_soap.jfif";
+import imgPureB from "../assets/products/purecure.png";
+import imgVitaminC from "../assets/products/vitaminCUbik.jfif";
+import imgYourgain from "../assets/products/yourgain_ubik.png";
+import imgTricholys from "../assets/products/tricholys_ubik.png";
+
 const FadeIn = ({ children, delay = 0, direction = "up", className = "" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -82,6 +93,77 @@ const products = [
     desc: "Lip Lightening Cream (15g) — Paraben-free, antioxidant rejuvenating formula for lighter, brighter lips", 
     link: "https://puremed.ae" 
   },
+  {
+    name: "Aloe Pure Soap",
+    img: imgAloePure,
+    category: "Pure Cure",
+    desc: "Gentle cleansing soap (100g) with aloe vera extract, glycerine and vitamin E for soft, hydrated skin",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Ifitago Beauty Soap",
+    img: imgIfitago,
+    category: "UBiK",
+    desc: "UBiK beauty cleanser for daily skin care and a fresh, even-looking complexion",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Multi Pure Tablets",
+    img: imgMultiPure,
+    category: "Pure Cure",
+    desc: "Multivitamin, multimineral and essential amino acid food supplement (3 x 10 tablets) — supports immunity, bones & joints, and muscle health",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Nalite Cream",
+    img: imgNalite,
+    category: "UBiK",
+    desc: "Skin lightening cream for a brighter, more even skin tone",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Osteo Pure Tablets",
+    img: imgOsteoPure,
+    category: "Pure Cure",
+    desc: "Food supplement (2 x 10 tablets) with calcium, magnesium, zinc, vitamin D3 and minerals — supports bone health",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Kozi Pure Soap",
+    img: imgKoziPure,
+    category: "Pure Cure",
+    desc: "Kojic acid skin lightening soap for brighter, clearer-looking skin",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Pure B+ Syrup",
+    img: imgPureB,
+    category: "Pure Cure",
+    desc: "Vitamin B complex syrup — supports energy metabolism, nerve function and heart health",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Epikrine+ Vitamin C Serum",
+    img: imgVitaminC,
+    category: "UBiK",
+    desc: "Vitamin C serum to brighten dull skin and support a radiant, even-toned complexion",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Yourgain Pro-Hair",
+    img: imgYourgain,
+    category: "UBiK",
+    desc: "Advanced nutrition formula with plant protein for hair health and growth support",
+    link: "https://puremed.ae"
+  },
+  {
+    name: "Tricholys Grey Hair Serum",
+    img: imgTricholys,
+    category: "UBiK",
+    desc: "Intensive grey hair serum (30ml) — helps reverse greying and regain natural hair colour",
+    link: "https://puremed.ae"
+  },
+
   // Pure Cure Range
   // { name: "Ova Pure", img: imgOvaPure, category: "Pure Cure", desc: "Specialized female reproductive & hormonal wellness support", link: "https://puremed.ae/product/ova-pure/" },
   // { name: "Pregna Pure", img: imgPregnaPure, category: "Pure Cure", desc: "Comprehensive maternal & prenatal nutritional formulation (30 tablets)", link: "https://puremed.ae/product/pure-cure-pregna-pure-tablets-30-tablets/" },
